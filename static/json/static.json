@@ -1,0 +1,50 @@
+{
+    "bank":["BNP Paribas","KBC ","Belfius ","ING ","Argenta","AXA","Crelan","Bpost Bank","Beobank","Fintro", "Degiro", "Flatex"],
+    "invoice_labels":{
+            "Brandstof":["Q8", "SHELL", "TOTAL", "ESSO"],
+            "Eten":["COLRUYT", "CARREFOUR", "DELHAIZE","SPAR", "TAKEAWAY","DELIVEROO", "BEN&LIEN"],
+            "Woning":["ENGIE", "HUUR","TELENET"],
+            "Auto":["AUTO", "VERZEKERING"],
+            "Loon":["SPX", "BELLT"],
+            "Investing":["DEGIRO","LITEBIT","Flatex Bank AG"],
+            "Persoonlijk":["BERNAERDTS B. + CREEMERS L.", "COOLBLUE","BOL.COM", "CHRISTELIJKE MUTUALITEIT","AANKOOP VIA INTERNET","Q PARK"]
+        },
+    "transaction_patterns":{
+        "Belfius":{ 
+            "line_start":"\\d{4}\\s+\\d{2}-\\d{2}-\\d{4}\\s+\\(VAL.",
+            "date":"(\\d{2}-\\d{2}-\\d{4})",
+            "amount":"(?=\\(VAL.\\s+\\d{2}-\\d{2}-\\d{4}\\)).*"
+        },
+        "KBC":""
+        },
+    "db":{
+        "db_conn":{
+            "db_driver":"{SQL Server Native Client 11.0}",
+            "db_server":"192.168.0.169\\SQLEXPRESS",
+            "db_db":"HomeDB",
+            "db_port":"1433",
+            "tds_version":"7.0"},
+        "connection_string":"Server=192.168.0.10\\SQLEXPRESS;Database=HomeDB;Trusted_Connection=True;uid='HOMEDESK\\Benjamin'",
+        "users_table":{
+            "UserID":"bigint",
+            "Firstname":"varchar(50)",
+            "Lastname":"varchar(50)",
+            "Quote":"varchar(50)"
+                        },
+        "used_tables":{
+                "tblTransactions":{
+                    "TransactionID":"bigint PRIMARY KEY",
+                    "Date":"date",
+                    "Amount":"float",
+                    "Description":"varchar(MAX)",
+                    "Label":"varchar(50)"
+                },
+                "tbl_test":{
+                    "id":"bigint",
+                    "test1":"nchar(10)",
+                    "test2":"varchar(50)"
+                }
+        }
+    }
+    
+}
