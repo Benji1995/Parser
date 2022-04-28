@@ -31,8 +31,8 @@ class BelfiusInvoiceParser(InvoiceParser):
         print("We've processed {} transaction from the '{}' Invoice.".format(len(self.list_of_transactions), self.f_path))
         # send_to_db=input("Would you like to send these transaction to the Database?[y/n]").upper()=="y".upper()
 
-        if True:
-            self.send_trans_to_DB()
+        # if True:
+        #     self.send_trans_to_DB()
             
     def trim_transaction_line(self, line):
         "Clean up raw line to retrieve correct transaction amount text"
@@ -153,5 +153,5 @@ class BelfiusInvoiceParser(InvoiceParser):
                     return key
                 
             
-        return 'Null'
+        return 'Overig'
         pass

@@ -1,13 +1,13 @@
 {
     "bank":["BNP Paribas","KBC ","Belfius ","ING ","Argenta","AXA","Crelan","Bpost Bank","Beobank","Fintro", "Degiro", "Flatex"],
     "invoice_labels":{
-            "Brandstof":["Q8", "SHELL", "TOTAL", "ESSO"],
+            "Transport":["Q8", "SHELL", "TOTAL", "ESSO","AUTO", "VERZEKERING"],
             "Eten":["COLRUYT", "CARREFOUR", "DELHAIZE","SPAR", "TAKEAWAY","DELIVEROO", "BEN&LIEN"],
             "Woning":["ENGIE", "HUUR","TELENET"],
-            "Auto":["AUTO", "VERZEKERING"],
-            "Loon":["SPX", "BELLT"],
-            "Investing":["DEGIRO","LITEBIT","Flatex Bank AG"],
-            "Persoonlijk":["BERNAERDTS B. + CREEMERS L.", "COOLBLUE","BOL.COM", "CHRISTELIJKE MUTUALITEIT","AANKOOP VIA INTERNET","Q PARK"]
+            "Auto":[],
+            "Loonstrook":["SPX", "BELLT"],
+            "Investing":[],
+            "Persoonlijk":["DEGIRO","LITEBIT","Flatex Bank AG","BERNAERDTS B. + CREEMERS L.", "COOLBLUE","BOL.COM", "CHRISTELIJKE MUTUALITEIT","AANKOOP VIA INTERNET","Q PARK"]
         },
     "transaction_patterns":{
         "Belfius":{ 
