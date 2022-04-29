@@ -1,5 +1,5 @@
 from Parsing_Classes.BelfiusInvoiceParser import BelfiusInvoiceParser
-from SQLPackage import DB_Init
+from ..SQLPackage import DB_Init
 from ..GoogleDriveAPI import GSheets
 from ..TKInterface import Interface
 import os
