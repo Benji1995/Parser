@@ -23,6 +23,7 @@ option = interface.askOptions(options)
 
 try:
     "Execute appropriate action based on the option"
+    invoices = []
     if option == 1:
 
         "Ask for File"
@@ -34,8 +35,12 @@ try:
         "Retrieve Invoices"
         bel_pars.getInvoice()
 
-    elif option == 2:
+        "Convert data appropriately"
+        bel_pars.list_of_transactions = [x.ConvToGsheets() for x in bel_pars.list_of_transactions]
 
+        invoices.append(bel_pars.list_of_transactions)
+
+    elif option == 2:
         "Entire Folder Process"
         folder = interface.askFolder()
         
@@ -46,10 +51,12 @@ try:
             "Retrieve Invoices from File"
             bel_pars.getInvoice()
 
-    "Convert data appropriately"
-    bel_pars.list_of_transactions = [x.ConvToGsheets() for x in bel_pars.list_of_transactions]
-    
-    GSInterface = GSheetsInterface.GSheetsInterface(bel_pars.list_of_transactions)
+            "Convert data appropriately"
+            bel_pars.list_of_transactions = [x.ConvToGsheets() for x in bel_pars.list_of_transactions]
+
+            invoices.append(bel_pars.list_of_transactions)
+
+    GSInterface = GSheetsInterface.GSheetsInterface(invoices)
     
     GSInterface.pre_process()
 
