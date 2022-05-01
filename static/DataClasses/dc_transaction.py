@@ -15,3 +15,6 @@ class Transaction:
     amount:float
     desc:str
     label:str
+
+    def ConvToGsheets(self):
+        return [self.mydate.strftime('%d-%m-%Y'),str(self.amount), self.desc, self.label]
