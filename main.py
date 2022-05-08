@@ -38,7 +38,7 @@ try:
         "Convert data appropriately"
         bel_pars.list_of_transactions = [x.ConvToGsheets() for x in bel_pars.list_of_transactions]
 
-        invoices.append(bel_pars.list_of_transactions)
+        invoices+=bel_pars.list_of_transactions
 
     elif option == 2:
         "Entire Folder Process"
@@ -53,14 +53,16 @@ try:
 
             "Convert data appropriately"
             bel_pars.list_of_transactions = [x.ConvToGsheets() for x in bel_pars.list_of_transactions]
-
-            invoices.append(bel_pars.list_of_transactions)
+            
+            invoices+=bel_pars.list_of_transactions
 
     GSInterface = GSheetsInterface.GSheetsInterface(invoices)
     
     GSInterface.pre_process()
 
     GSInterface.process()
+
+    GSInterface.post_process()
 
 except FileNotFoundError:
     raise FileNotFoundError('Action has been cancelled..')

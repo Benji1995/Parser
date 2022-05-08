@@ -1,0 +1,15 @@
+{
+    "Folders":{
+        "Uitgave":{
+            "id":"1TrIdNRKrjl_9DyeKPiM0JcqwyIlAjRyp"
+        }
+    },
+    "Files":{
+        "MONTH_YEAR":{
+            "id":"1m-t-Lyg77E3V0QftcLqkTqrf_8YCVsMU6-0i6U69Vmg",
+            "start_row":5,
+            "income_col":7,
+            "expense_col":2
+        }
+    }
+}
